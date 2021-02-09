@@ -1,0 +1,14 @@
+.left {
+  float: left;
+  width: 100px;
+  height: 400px;
+  background: linear-gradient(
+    140deg,
+    rgb(182, 33, 254) 0%,
+    rgb(31, 118, 249) 80%,
+    rgb(94, 48, 235) 100%
+  );
+}
+.right {
+  float: left;
+}
