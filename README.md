@@ -2,6 +2,6 @@
 
 ## Framework
 
-[Electron](https://www.electronjs.com)
+[Electron](https://www.electronjs.org)
 
 ## Library

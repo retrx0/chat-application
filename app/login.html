@@ -11,14 +11,36 @@
      <script src='main.js'></script>
  </head>
  <body>
-     <div>
-         <div class="left">
-            <h1>Secure</h1>
+     <div class="container">
+         <div class="login-left">
+            <h1><i class="fas fa-comments"></i></h1>
          </div>
-         <div class="right">
-            <h1>Login</h1>
-            <div class="btn"></div>
+         <div class="login-right">
+             <div class="center">
+                <h4>Login</h4>
+                <input id="secret-code-input" type="text" placeholder="login with secret code" class="input-field"></input>
+                <input id="login-button" type="submit" title="Login" class="btn"></input>
+            </div>
+             </div>
          </div>
      </div>
+
+     <script src="../assets/materialize/js/materialize.js"></script>
+     <script>
+        const { ipcRenderer } = require('electron')
+        const secret_code = document.getElementById('secret-code-input');
+        const loginButton = document.getElementById('login-button');
+
+        let onLogin = () => {
+            ipcRenderer.send('secret-code', {secretCode: secret_code.value});
+        }
+
+        loginButton.addEventListener('click', () => {
+            onLogin();
+        })
+        secret_code.addEventListener('keypress', (e) => {
+            if(e.keyCode === 13) onLogin();
+        })
+     </script>
  </body>
  </html>
